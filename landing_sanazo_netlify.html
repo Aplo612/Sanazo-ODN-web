@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SANAZO — Delivery saludable, claro y personalizado</title>
+  <meta name="description" content="SANAZO es una app de delivery saludable con planes personalizados, información nutricional clara y precios justos. Únete a la lista de espera y recibe la app en iOS o Android." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="SANAZO — Delivery saludable, claro y personalizado" />
+  <meta property="og:description" content="Planes saludables, detalle nutricional, gamificación y comunidad. Descárgala para iOS y Android." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sanazo.netlify.app/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%2306b6d4'/><text x='50' y='60' font-size='56' text-anchor='middle' fill='white' font-family='Arial'>S</text></svg>">
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (brand colors)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#effef7',
+              100: '#d7fde9',
+              200: '#b3f7d4',
+              300: '#84ecb7',
+              400: '#52d896',
+              500: '#22c176',
+              600: '#16a262',
+              700: '#13804f',
+              800: '#116642',
+              900: '#0f5337',
+            },
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "SANAZO",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+    "description": "Delivery saludable con información nutricional clara, planes personalizables y comunidad.",
+    "url": "https://sanazo.netlify.app/"
+  }
+  </script>
+
+  <style>
+    /* Subtle gradients & utilities */
+    .bg-hero { background: radial-gradient(60% 100% at 50% 0%, rgba(34,193,118,.25), transparent 70%); }
+    .glass { backdrop-filter: blur(8px); background: linear-gradient(180deg, rgba(255,255,255,.75), rgba(255,255,255,.6)); }
+  </style>
+</head>
+<body class="antialiased text-slate-800">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-brand-600 border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#inicio" class="flex items-center gap-2">
+          <!-- Inline logo -->
+          <img src="assets/logo-mark.png" alt="SANAZO" class="h-10 w-auto rounded"/>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#beneficios" class="hover:text-brand-700">Beneficios</a>
+          <a href="#como-funciona" class="hover:text-brand-700">Cómo funciona</a>
+          <a href="#mision" class="hover:text-brand-700">Misión & Visión</a>
+          <a href="#faq" class="hover:text-brand-700">FAQ</a>
+          <a href="#descargar" class="px-4 py-2 rounded-full bg-brand-600 text-white hover:bg-brand-700 transition">Descargar</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-slate-200" aria-label="Abrir menú">
+          <span class="i">☰</span>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="md:hidden hidden border-t border-slate-100 bg-white/90 glass">
+      <nav class="max-w-7xl mx-auto px-4 py-3 grid gap-3 text-sm">
+        <a href="#beneficios" class="hover:text-brand-700">Beneficios</a>
+        <a href="#como-funciona" class="hover:text-brand-700">Cómo funciona</a>
+        <a href="#mision" class="hover:text-brand-700">Misión & Visión</a>
+        <a href="#faq" class="hover:text-brand-700">FAQ</a>
+        <a href="#descargar" class="px-4 py-2 text-center rounded-full bg-brand-600 text-white hover:bg-brand-700 transition">Descargar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="bg-hero">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 text-brand-700 bg-brand-50 px-3 py-1 rounded-full text-xs font-medium">Saludable • Transparente • Delicioso</span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">
+            Tu comida saludable, <span class="text-brand-600">sin misterio</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-600">Planes semanales, detalle nutricional claro y precios justos. Elige, personaliza y disfruta. SANAZO te acompaña con retos, recompensas y comunidad.</p>
+          <div class="mt-6 flex flex-wrap items-center gap-3" id="descargar">
+            <!-- Store buttons (replace hrefs cuando tengas las URLs reales) -->
+            <a href="#" class="group inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-brand-200 hover:border-brand-400 transition bg-white">
+              <svg viewBox="0 0 40 40" width="28" height="28" aria-hidden="true"><rect width="40" height="40" rx="8" fill="#000"/><text x="20" y="26" text-anchor="middle" font-size="14" fill="#fff" font-family="Inter, Arial"></text></svg>
+              <div class="leading-tight text-left">
+                <div class="text-[11px] text-slate-500">Disponible en</div>
+                <div class="text-sm font-semibold">App Store</div>
+              </div>
+            </a>
+            <a href="#" class="group inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-brand-200 hover:border-brand-400 transition bg-white">
+              <svg viewBox="0 0 512 512" width="28" height="28" aria-hidden="true"><path d="M325.3 234.3L104.6 16.2C96.2 8 84.5 3.5 72 3.5 48.3 3.5 29 22.8 29 46.5v418.9c0 23.7 19.3 43 43 43 12.5 0 24.2-4.5 32.6-12.7l220.8-218.7c16.6-16.5 16.6-43.3-.1-59.7zM370.9 188.6l-28.8-28.8-39.3 39.3 28.8 28.8 39.3-39.3zm0 134.8l-39.3-39.3-28.8 28.8 39.3 39.3 28.8-28.8z" fill="#34a853"/></svg>
+              <div class="leading-tight text-left">
+                <div class="text-[11px] text-slate-500">Disponible en</div>
+                <div class="text-sm font-semibold">Google Play</div>
+              </div>
+            </a>
+            <a href="#waitlist" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-brand-600 text-white hover:bg-brand-700 transition">
+              Únete a la lista de espera
+              <span aria-hidden>→</span>
+            </a>
+          </div>
+          <!-- Video promocional -->
+          <div class="mt-6">
+            <video controls autoplay muted loop playsinline poster="assets/promo-poster.jpg" class="w-full max-w-xl rounded-2xl border border-brand-200 shadow">
+              <source src="assets/promo.mp4" type="video/mp4" />
+              Tu navegador no soporta video HTML5.
+            </video>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Aún en piloto. Notificaremos cuando esté disponible en tu ciudad.</p>
+        </div>
+        <!-- Mock phone UI -->
+        <div class="relative mx-auto w-[280px] sm:w-[320px]">
+          <div class="absolute -inset-6 blur-3xl opacity-50 bg-gradient-to-tr from-brand-300 to-brand-600 rounded-full"></div>
+          <div class="relative mx-auto rounded-[2.2rem] border-8 border-black shadow-2xl overflow-hidden bg-white" aria-label="Vista previa de la app">
+            <img src="assets/prototipo.png" alt="Prototipo de la app SANAZO" class="w-full object-cover rounded-2xl border border-brand-200" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="beneficios" class="py-20 bg-gradient-to-b from-white to-brand-50/40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold">Beneficios que sí importan</h2>
+        <p class="mt-3 text-slate-600">Transparencia nutricional, precios claros y experiencias que motivan hábitos saludables.</p>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <div class="text-3xl">🥗</div>
+          <h3 class="mt-3 font-semibold text-lg">Transparencia nutricional</h3>
+          <p class="mt-2 text-sm text-slate-600">Cada plato muestra calorías, macros y alérgenos de forma clara. Sin letras pequeñas.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <div class="text-3xl">🧭</div>
+          <h3 class="mt-3 font-semibold text-lg">Personalización real</h3>
+          <p class="mt-2 text-sm text-slate-600">Adapta planes a tus metas (peso, energía, estilo de vida) con filtros y favoritos.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <div class="text-3xl">💸</div>
+          <h3 class="mt-3 font-semibold text-lg">Precios justos</h3>
+          <p class="mt-2 text-sm text-slate-600">Optimización de rutas y proveedores locales para ofrecer calidad al mejor precio.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <div class="text-3xl">🎮</div>
+          <h3 class="mt-3 font-semibold text-lg">Gamificación</h3>
+          <p class="mt-2 text-sm text-slate-600">Retos semanales, logros y recompensas que convierten hábitos en constancia.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <div class="text-3xl">👥</div>
+          <h3 class="mt-3 font-semibold text-lg">Comunidad</h3>
+          <p class="mt-2 text-sm text-slate-600">Comparte progreso, recetas y tips con gente como tú. Moderación saludable.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <div class="text-3xl">⚡</div>
+          <h3 class="mt-3 font-semibold text-lg">Entrega eficiente</h3>
+          <p class="mt-2 text-sm text-slate-600">Horarios predecibles y trazabilidad en tiempo real de tu pedido.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="como-funciona" class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold">¿Cómo funciona?</h2>
+          <ul class="mt-6 space-y-4 text-slate-700">
+            <li><span class="font-semibold">1.</span> Elige tu plan semanal o platos a la carta.</li>
+            <li><span class="font-semibold">2.</span> Personaliza por calorías, macros y preferencias.</li>
+            <li><span class="font-semibold">3.</span> Recibe en horario fijo y sigue tu progreso.</li>
+            <li><span class="font-semibold">4.</span> Gana puntos por constancia y canjéalos en la app.</li>
+          </ul>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Transparencia nutricional (ejemplo)</h3>
+          <div class="mt-4 grid grid-cols-2 gap-4 text-sm">
+            <div class="p-4 rounded-xl bg-brand-50">
+              <div class="text-slate-500">Ensalada quinoa</div>
+              <div class="mt-1 font-semibold">480 kcal</div>
+              <div class="text-slate-500">P35 • C45 • G16</div>
+            </div>
+            <div class="p-4 rounded-xl bg-brand-50">
+              <div class="text-slate-500">Pollo grill</div>
+              <div class="mt-1 font-semibold">520 kcal</div>
+              <div class="text-slate-500">P40 • C50 • G12</div>
+            </div>
+          </div>
+          <p class="mt-4 text-slate-600">Indicadores claros por porción y alertas de alérgenos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section id="mision" class="py-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold">Misión & Visión</h2>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Nuestra misión</h3>
+          <p class="mt-2 text-slate-600">Hacer que comer saludable sea simple, placentero y accesible mediante información clara, personalización y una logística eficiente.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold text-lg">Nuestra visión</h3>
+          <p class="mt-2 text-slate-600">Ser la plataforma latinoamericana de referencia en delivery saludable, impulsando comunidades que cuidan su bienestar con datos y propósito.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social proof -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-semibold">Lo que dicen nuestros testers</h2>
+        <p class="mt-2 text-slate-600">De nuestro piloto con 21 entrevistas y primeras pruebas.</p>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm">
+        <blockquote class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">“Por fin entiendo qué como y cómo me ayuda.” <div class="mt-2 text-slate-500">— Ana, 22</div></blockquote>
+        <blockquote class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">“Los planes me ahorran tiempo y dinero.” <div class="mt-2 text-slate-500">— Luis, 24</div></blockquote>
+        <blockquote class="p-6 rounded-2xl border border-slate-200 bg-white shadow-sm">“Los retos semanales me motivan a no saltarme comidas.” <div class="mt-2 text-slate-500">— Sofía, 21</div></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waitlist form -->
+  <section id="waitlist" class="py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-6 rounded-2xl border border-slate-200 bg-white shadow-md">
+        <h3 class="text-xl font-semibold">Únete a la lista de espera</h3>
+        <p class="mt-1 text-sm text-slate-600">Te avisaremos cuando lancemos en tu ciudad y te enviaremos enlaces de descarga.</p>
+        <!-- Netlify form: habilita "Forms" en el panel y listo -->
+        <form name="waitlist" method="POST" data-netlify="true" class="mt-6 grid sm:grid-cols-2 gap-4">
+          <input type="hidden" name="form-name" value="waitlist" />
+          <label class="sr-only" for="name">Nombre</label>
+          <input id="name" name="name" required placeholder="Nombre" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          <label class="sr-only" for="email">Email</label>
+          <input id="email" type="email" name="email" required placeholder="Email" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500" />
+          <div class="sm:col-span-2 grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <select name="ciudad" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="">Ciudad</option>
+              <option>Lima</option>
+              <option>Arequipa</option>
+              <option>Trujillo</option>
+              <option>Cusco</option>
+            </select>
+            <select name="objetivo" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-500">
+              <option value="">Objetivo</option>
+              <option>Balance</option>
+              <option>Pérdida de peso</option>
+              <option>Definición</option>
+              <option>Vegetariano</option>
+            </select>
+            <button type="submit" class="px-4 py-3 rounded-xl bg-brand-600 text-white font-semibold hover:bg-brand-700 transition">Quiero ser parte</button>
+          </div>
+          <p class="sm:col-span-2 text-xs text-slate-500">Al enviar aceptas recibir comunicaciones sobre el lanzamiento. Puedes darte de baja en cualquier momento.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 bg-slate-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl md:text-4xl font-bold text-center">Preguntas frecuentes</h2>
+      <div class="mt-10 grid md:grid-cols-2 gap-6">
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">¿En qué ciudades está disponible?</h3>
+          <p class="mt-2 text-slate-600">Estamos en piloto y abriremos por distritos de Lima primero. Únete a la lista para enterarte.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">¿Puedo ver alérgenos y macros?</h3>
+          <p class="mt-2 text-slate-600">Sí. Cada plato muestra calorías, macros y alérgenos con claridad y alertas.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">¿Qué métodos de pago aceptan?</h3>
+          <p class="mt-2 text-slate-600">Tarjetas y billeteras. Pronto, suscripciones con precio preferencial.</p>
+        </div>
+        <div class="p-6 rounded-2xl border border-brand-100 bg-white/90 shadow-sm hover:shadow-md transition">
+          <h3 class="font-semibold">¿Cómo funcionan los puntos?</h3>
+          <p class="mt-2 text-slate-600">Ganas puntos por constancia, retos y referidos. Canjea en la app por descuentos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10 border-t border-slate-100 bg-brand-600">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="flex items-center">
+          <img src="assets/logo-slogan.png" alt="SANAZO" class="h-35 w-auto rounded"/>
+        </div>
+        <div class="text-sm text-slate-500">© <span id="y"></span> SANAZO. Todos los derechos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn?.addEventListener('click', () => menu.classList.toggle('hidden'));
+    
+    // Year
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
